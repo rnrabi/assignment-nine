@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { authContext } from "../contextApi/AuthProvider";
+import { CgProfile } from "react-icons/cg";
 
 
 const Navbar = () => {
@@ -56,11 +57,12 @@ const Navbar = () => {
 
 
                     <div className="w-10 relative" title={user && user?.displayName}>
-                        {user ? (
-                            <img className="rounded-full" alt="User Profile" src={user?.photoURL} />
+                        {user ? ( user?.displayName ?
+                            <img className="rounded-full" src={user?.photoURL} /> :<CgProfile className="text-3xl"></CgProfile>
                         ) : (
-                            <img className="rounded-full" alt="Default Profile" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            <CgProfile className="text-3xl"></CgProfile>
                         )}
+
                         <span className="absolute right-0">{user?.email}</span>
                     </div>
 

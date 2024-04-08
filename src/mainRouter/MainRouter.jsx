@@ -6,6 +6,7 @@ import Contact from "../pages/contact/Contact";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import ErrorPage from "../pages/errorPage/ErrorPage";
+import PrivateRoute from "../components/privateRoute/PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -16,11 +17,12 @@ export const router = createBrowserRouter([
       children:[
         {
           path:'/',
-          element:<Home></Home>
+          element:<Home></Home>,
+          loader:()=>fetch('data.json')
         },
         {
           path:'/updateprofile',
-          element:<UpdateProfile></UpdateProfile>
+          element:<PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
         },
         {
           path:'/contact',

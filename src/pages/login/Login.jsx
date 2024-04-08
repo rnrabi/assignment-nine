@@ -30,6 +30,7 @@ const Login = () => {
         googleLogin()
             .then(result => {
                 console.log(result.user)
+                toast('google login success')
             })
             .catch(error => {
                 console.log(error.message)
@@ -40,6 +41,7 @@ const Login = () => {
         githubLogIn()
         .then(result=>{
             console.log(result.user)
+            toast('github login success')
         })
         .catch(error=>{
             console.log(error.message)
@@ -49,6 +51,7 @@ const Login = () => {
         twitterLogIn()
         .then(result=>{
             console.log(result.user)
+            toast('twitter login success')
         })
         .catch(error=>{
             console.log(error.message)

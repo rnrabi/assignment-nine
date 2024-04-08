@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { authContext } from "../../components/contextApi/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import { toast } from 'react-toastify';
 
 
 const UpdateProfile = () => {
@@ -17,7 +18,7 @@ const UpdateProfile = () => {
             displayName : name , photoURL:picLink
         })
         .then(()=>{
-
+            toast('profile is updated success fully')
         })
         .catch(error=>{
             console.log(error.message)

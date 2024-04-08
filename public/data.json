@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "image": "https://example.com/house1.jpg",
+      "title": "Modern Apartment in Downtown",
+      "segment_name": "Apartment",
+      "description": "A luxurious apartment with modern amenities located in the heart of the city.",
+      "price": 200000,
+      "status": "sell",
+      "area": 1200,
+      "location": "Downtown, City",
+      "facilities": ["Swimming Pool", "Gym", "24/7 Security"]
+    },
+    {
+      "id": 2,
+      "image": "https://example.com/house2.jpg",
+      "title": "Cozy Family Home",
+      "segment_name": "House",
+      "description": "A cozy home perfect for families, featuring spacious rooms and a beautiful garden.",
+      "price": 300000,
+      "status": "sell",
+      "area": 1800,
+      "location": "Suburban Neighborhood",
+      "facilities": ["Garden", "Garage", "Fireplace"]
+    },
+    {
+      "id": 3,
+      "image": "https://example.com/house3.jpg",
+      "title": "Charming Townhouse",
+      "segment_name": "Townhouse",
+      "description": "A charming townhouse with vintage appeal, located in a peaceful community.",
+      "price": 2500,
+      "status": "rent",
+      "area": 1500,
+      "location": "Historic District",
+      "facilities": ["Patio", "Laundry Room", "Central Heating"]
+    },
+    {
+      "id": 4,
+      "image": "https://example.com/house4.jpg",
+      "title": "Luxury Villa with Ocean View",
+      "segment_name": "Villa",
+      "description": "A luxurious villa boasting breathtaking ocean views and top-notch amenities.",
+      "price": 1000000,
+      "status": "sell",
+      "area": 3500,
+      "location": "Beachfront",
+      "facilities": ["Private Pool", "Jacuzzi", "Home Theater"]
+    },
+    {
+      "id": 5,
+      "image": "https://example.com/house5.jpg",
+      "title": "Sleek Loft in Urban Setting",
+      "segment_name": "Loft",
+      "description": "A sleek loft apartment with industrial-chic design elements, ideal for urban living.",
+      "price": 1800,
+      "status": "rent",
+      "area": 900,
+      "location": "City Center",
+      "facilities": ["Exposed Brick Walls", "Open Floor Plan", "Roof Deck"]
+    }
+  ]
+  
