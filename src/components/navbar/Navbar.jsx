@@ -1,7 +1,16 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { authContext } from "../contextApi/AuthProvider";
 
 
 const Navbar = () => {
+    const {user , logoutUser} =useContext(authContext);
+
+    const handleLogout = ()=>{
+        logoutUser()
+        .then()
+        .catch()
+    }
 
     const menu = <>
         <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-green-600 underline font-bold' : ''}>Home</NavLink></li>
@@ -37,11 +46,15 @@ const Navbar = () => {
 
                 <div className="navbar-end">
                     {/* <a className="btn">Button</a> */}
-                    <Link to='/login'><button className="btn">Login</button></Link>
-                    <Link><button className="btn">Logout</button></Link>
+                   
+                    {
+                        user ?  <Link><button onClick={handleLogout} className="btn">Logout</button></Link> :  <Link to='/login'><button className="btn">Login</button></Link>
+                    }
+                   
                    
                     <div className="w-10">
-                        <img className="rounded-full" alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        {/* don't work image profile */}
+                        <img className="rounded-full" alt="Tailwind CSS Navbar component" src={ user ? user.photoURL : "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
                     </div>
 
                 </div>
