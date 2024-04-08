@@ -4,12 +4,11 @@ import { authContext } from "../contextApi/AuthProvider";
 
 
 const Navbar = () => {
-    const {user , logoutUser} =useContext(authContext);
-
-    const handleLogout = ()=>{
+    const { user, logoutUser } = useContext(authContext);
+    const handleLogout = () => {
         logoutUser()
-        .then()
-        .catch()
+            .then()
+            .catch()
     }
 
     const menu = <>
@@ -45,16 +44,18 @@ const Navbar = () => {
 
 
                 <div className="navbar-end">
-                    {/* <a className="btn">Button</a> */}
-                   
+
                     {
-                        user ?  <Link><button onClick={handleLogout} className="btn">Logout</button></Link> :  <Link to='/login'><button className="btn">Login</button></Link>
+                        user ? <Link><button onClick={handleLogout} className="btn">Logout</button></Link> : <Link to='/login'><button className="btn">Login</button></Link>
                     }
-                   
-                   
+
+
                     <div className="w-10">
-                        {/* don't work image profile */}
-                        <img className="rounded-full" alt="Tailwind CSS Navbar component" src={ user ? user.photoURL : "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
+                        {user ? (
+                            <img className="rounded-full" alt="User Profile" src={user?.photoURL} />
+                        ) : (
+                            <img className="rounded-full" alt="Default Profile" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        )}
                     </div>
 
                 </div>
