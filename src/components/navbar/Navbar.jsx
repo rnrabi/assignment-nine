@@ -50,12 +50,13 @@ const Navbar = () => {
                     }
 
 
-                    <div className="w-10">
+                    <div className="w-10 relative" title={user && user?.displayName}>
                         {user ? (
                             <img className="rounded-full" alt="User Profile" src={user?.photoURL} />
                         ) : (
                             <img className="rounded-full" alt="Default Profile" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                         )}
+                        <span className="absolute right-0">{user?.email}</span>
                     </div>
 
                 </div>

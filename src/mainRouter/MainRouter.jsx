@@ -5,12 +5,14 @@ import UpdateProfile from "../pages/updateProfile/UpdateProfile";
 import Contact from "../pages/contact/Contact";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
+import ErrorPage from "../pages/errorPage/ErrorPage";
 
 
 export const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
           path:'/',
