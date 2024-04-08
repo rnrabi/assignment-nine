@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -36,9 +36,9 @@ const Navbar = () => {
 
                 <div className="navbar-end">
                     {/* <a className="btn">Button</a> */}
-                    <button className="btn">Login</button>
-                    <button className="btn">Logout</button>
-
+                    <Link to='/login'><button className="btn">Login</button></Link>
+                    <Link><button className="btn">Logout</button></Link>
+                   
                     <div className="w-10">
                         <img className="rounded-full" alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                     </div>
