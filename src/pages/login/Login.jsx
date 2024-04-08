@@ -18,6 +18,7 @@ const Login = () => {
         loginUser(email, password)
             .then(result => {
                 console.log(result.user)
+                toast('you are success to login')
             })
             .catch(error => {
                 console.log(error.message.split('/')[1].replace(')', ''))

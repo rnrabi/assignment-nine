@@ -4,6 +4,7 @@ import { FaRegEyeSlash } from "react-icons/fa6";
 import { FaRegEye } from "react-icons/fa6";
 import { toast } from 'react-toastify';
 import { authContext } from "../../components/contextApi/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 
 const Register = () => {
@@ -41,9 +42,22 @@ const Register = () => {
         signUpUser(email , password)
         .then(result =>{
             console.log(result.user)
+
+            updateProfile(result.user , {
+                displayName:name , photoURL: photo,
+            })
+            .then(()=>{
+                // update profile success message
+            })
+            .catch(error=>{
+                console.log(error.message)
+            })
+
+            toast('you have successfully registered')
         })
         .catch(error =>{
             console.log(error.message)
+            toast(error.message.split('/')[1].replace(')', ''))
         })
 
     }
