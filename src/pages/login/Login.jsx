@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
@@ -41,7 +42,7 @@ const Login = () => {
             </button>
         </div>
         <p className="text-xs text-center sm:px-6 dark:text-gray-600">Do not have an account?
-            <a rel="noopener noreferrer" href="#" className="underline dark:text-gray-800">Sign up</a>
+            <Link to='/register' rel="noopener noreferrer" href="#" className="underline dark:text-gray-800 text-blue-500 font-semibold ml-2">Sign up</Link>
         </p>
     </div> 
     );
