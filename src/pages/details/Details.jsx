@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { FaCheck } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 const Details = () => {
     const allData = useLoaderData()
@@ -10,6 +11,9 @@ const Details = () => {
     const {image , location , price , segment_name , status , title, area , description , facilities} = singleData;
     return (
         <div>
+            <Helmet>
+                <title>Residential | Details</title>
+            </Helmet>
             <h2 className="text-center text-3xl font-bold py-4 my-6 mt-8 text-green-400">See details about your like </h2>
             <div className="">
                 <div className="md:grid md:grid-cols-5 gap-5">

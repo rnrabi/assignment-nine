@@ -5,12 +5,13 @@ import { FaRegEye } from "react-icons/fa6";
 import { toast } from 'react-toastify';
 import { authContext } from "../../components/contextApi/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(true);
     const [error, setError] = useState('')
-    const {signUpUser}=useContext(authContext);
+    const { signUpUser } = useContext(authContext);
 
 
     const handleSubmit = (e) => {
@@ -28,37 +29,37 @@ const Register = () => {
             toast('password must be 6 character')
             return;
         }
-        if(!/[A-Z]/.test(password)){
+        if (!/[A-Z]/.test(password)) {
             setError('Must added an uppercase letter');
             toast('Must added an uppercase letter')
             return;
         }
-        if(!/[a-z]/.test(password)){
+        if (!/[a-z]/.test(password)) {
             setError('Must added an lowercase letter');
             toast('')
             return;
         }
         // create user / registration
-        signUpUser(email , password)
-        .then(result =>{
-            console.log(result.user)
+        signUpUser(email, password)
+            .then(result => {
+                console.log(result.user)
 
-            updateProfile(result.user , {
-                displayName:name , photoURL: photo,
+                updateProfile(result.user, {
+                    displayName: name, photoURL: photo,
+                })
+                    .then(() => {
+                        // update profile success message
+                    })
+                    .catch(error => {
+                        console.log(error.message)
+                    })
+
+                toast('you have successfully registered')
             })
-            .then(()=>{
-                // update profile success message
-            })
-            .catch(error=>{
+            .catch(error => {
                 console.log(error.message)
+                toast(error.message.split('/')[1].replace(')', ''))
             })
-
-            toast('you have successfully registered')
-        })
-        .catch(error =>{
-            console.log(error.message)
-            toast(error.message.split('/')[1].replace(')', ''))
-        })
 
     }
 
@@ -66,6 +67,9 @@ const Register = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Residential | Register</title>
+            </Helmet>
             <div className="flex flex-col mx-auto shadow-2xl max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800">
                 <div className="mb-8 text-center">
                     <h1 className="my-3 text-4xl font-bold">Please Register</h1>

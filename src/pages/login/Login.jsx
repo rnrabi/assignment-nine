@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link , useLocation , useNavigate} from "react-router-dom";
 import { authContext } from "../../components/contextApi/AuthProvider";
 import { toast } from 'react-toastify';
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -64,6 +65,9 @@ const Login = () => {
 
     return (
         <div className=" w-full mx-auto max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800 shadow-2xl">
+            <Helmet>
+            <title>Residential | Login</title>
+        </Helmet>
             <h1 className="text-2xl font-bold text-center">Login</h1>
             <form onSubmit={handleLogin} noValidate="" action="" className="space-y-6">
                 <div className="space-y-1 text-sm">

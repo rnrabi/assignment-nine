@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { authContext } from "../../components/contextApi/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { toast } from 'react-toastify';
+import { Helmet } from "react-helmet-async";
 
 
 const UpdateProfile = () => {
@@ -28,6 +29,9 @@ const UpdateProfile = () => {
 
     return (
         <div className="">
+            <Helmet>
+                <title>Residential | Update profile</title>
+            </Helmet>
             <div className="flex flex-col mx-auto max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800">
                 <div className="mb-8 text-center">
                     <h1 className="my-3 text-4xl text-purple-500 font-bold">Your details</h1>
