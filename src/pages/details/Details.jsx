@@ -7,7 +7,7 @@ const Details = () => {
     // console.log(allData , id)
     const singleData = allData.find(data => data.id == id1)
     console.log(singleData)
-    const {id ,image , location , price , segment_name , status , title, area , description , facilities} = singleData;
+    const {image , location , price , segment_name , status , title, area , description , facilities} = singleData;
     return (
         <div>
             <h2 className="text-center text-3xl font-bold py-4 my-6 mt-8 text-green-400">See details about your like </h2>

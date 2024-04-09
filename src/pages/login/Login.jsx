@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link , useLocation , useNavigate} from "react-router-dom";
 import { authContext } from "../../components/contextApi/AuthProvider";
 import { toast } from 'react-toastify';
 
@@ -7,6 +7,9 @@ import { toast } from 'react-toastify';
 const Login = () => {
     const { googleLogin, loginUser , githubLogIn,twitterLogIn } = useContext(authContext);
     // const [error , setError] =useState('')
+    const location = useLocation()
+    const navigate = useNavigate()
+    console.log(location.state)
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -31,6 +34,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user)
                 toast('google login success')
+                navigate(location?.state || '/')
             })
             .catch(error => {
                 console.log(error.message)
