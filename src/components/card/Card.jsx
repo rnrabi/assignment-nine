@@ -2,19 +2,28 @@ import PropTypes from 'prop-types';
 
 const Card = ({residential}) => {
     console.log(residential)
+    const {image , title , status , area , location , price ,segment_name} =residential;
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
-                <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+                <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
-                        Shoes!
-                        <div className="badge badge-secondary">NEW</div>
+                       {title}
+                        <div className="badge badge-secondary">{status}</div>
                     </h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <div className='flex justify-between mb-6'>
+                        <div className='mb-5'> 
+                            <h3>Area : {area}sq ft</h3>
+                            <h3>Location:{location}</h3>
+                        </div>
+                        <div>
+                            <h3>{segment_name}</h3>
+                            <h3>Price:{price}Tk</h3>
+                        </div>
+                    </div>
                     <div className="card-actions justify-end">
-                        <div className="badge badge-outline">Fashion</div>
-                        <div className="badge badge-outline">Products</div>
+                        <button className="btn btn-secondary btn-outline">View Property</button>
                     </div>
                 </div>
             </div>

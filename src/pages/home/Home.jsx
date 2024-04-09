@@ -11,8 +11,7 @@ const Home = () => {
 console.log(residentialData)
 
     return (
-        <div>
-            <h2>This is home</h2>
+        <div className="md:grid grid-cols-3 gap-8">
             {
                 residentialData.map(residential =><Card 
                 key={residential.id}
