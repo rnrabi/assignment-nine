@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Card = ({residential}) => {
-    console.log(residential)
-    const {image , title , status , area , location , price ,segment_name} =residential;
+    // console.log(residential)
+    const {id , image , title , status , area , location , price ,segment_name} =residential;
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -23,7 +24,7 @@ const Card = ({residential}) => {
                         </div>
                     </div>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-secondary btn-outline">View Property</button>
+                       <Link to={`/details/${id}`}> <button className="btn btn-secondary btn-outline">View Property</button></Link>
                     </div>
                 </div>
             </div>
