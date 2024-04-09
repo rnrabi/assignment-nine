@@ -35,9 +35,9 @@ const UpdateProfile = () => {
             <div className="flex flex-col mx-auto max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800">
                 <div className="mb-8 text-center">
                     <h1 className="my-3 text-4xl text-purple-500 font-bold">Your details</h1>
-                    <p className="text-xl font-semibold dark:text-gray-600">Name:{user?.displayName}</p>
-                    <p className="my-3 text-xl font-semibold  dark:text-gray-600">Email:{user?.email}</p>
-                    <p className="text-xl font-semibold  dark:text-gray-600">PhotoURL:{user?.photoURL}</p>
+                    <p className="text-xl font-semibold dark:text-gray-600">Name: {user?.displayName}</p>
+                    <p className="my-3 text-xl font-semibold  dark:text-gray-600">Email: {user?.email}</p>
+                    <p className="text-xl font-semibold text-ellipsis overflow-hidden dark:text-gray-600">PhotoURL: {user?.photoURL}</p>
                 </div>
                 <hr className=" border border-gray-600 mb-4" />
 
@@ -58,7 +58,7 @@ const UpdateProfile = () => {
                     </div>
                     <div className="space-y-2">
                         <div>
-                            <button  className="btn w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">Save Change</button>
+                            <button  className="btn w-full px-8 py-3 text-xl font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">Save Change</button>
                         </div>
                     </div>
                 </form>

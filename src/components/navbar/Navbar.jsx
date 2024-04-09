@@ -38,7 +38,7 @@ const Navbar = () => {
                             {menu}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Residential</a>
+                    <a className="btn btn-ghost text-2xl">Residential</a>
                 </div>
 
 
