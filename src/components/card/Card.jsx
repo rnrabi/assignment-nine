@@ -9,7 +9,7 @@ const Card = ({residential}) => {
     const {id , image , title , status , area , location , price ,segment_name} =residential;
     return (
         <div data-aos="zoom-in" data-aos-duration="1000">
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card bg-base-100 shadow-xl">
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
@@ -17,7 +17,7 @@ const Card = ({residential}) => {
                         <div className="badge badge-secondary">{status}</div>
                     </h2>
                     <div className='flex justify-between mb-6'>
-                        <div className='mb-5'> 
+                        <div className='mb-5 '> 
                             <h3>Area : {area}sq ft</h3>
                             <h3>Location:{location}</h3>
                         </div>
