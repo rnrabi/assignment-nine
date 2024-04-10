@@ -47,6 +47,7 @@ const Login = () => {
         .then(result=>{
             console.log(result.user)
             toast('github login success')
+            navigate(location?.state || '/')
         })
         .catch(error=>{
             console.log(error.message)
@@ -57,6 +58,7 @@ const Login = () => {
         .then(result=>{
             console.log(result.user)
             toast('twitter login success')
+            navigate(location?.state || '/')
         })
         .catch(error=>{
             console.log(error.message)

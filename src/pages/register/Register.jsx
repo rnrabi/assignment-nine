@@ -79,22 +79,22 @@ const Register = () => {
                     <div className="space-y-4">
                         <div>
                             <label htmlFor="name" className="block mb-2 text-sm">Name</label>
-                            <input type="text" name="name" id="name" placeholder="your name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
+                            <input type="text" name="name" id="name" placeholder="your name" required className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
                         </div>
                         <div>
                             <label htmlFor="email" className="block mb-2 text-sm">Email address</label>
-                            <input type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
+                            <input type="email" name="email" id="email" placeholder="leroy@jenkins.com" required className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
                         </div>
                         <div>
                             <label htmlFor="photo" className="block mb-2 text-sm">Photo URL</label>
-                            <input type="text" name="photo" id="photo" placeholder="Photo URL" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
+                            <input type="text" name="photo" id="photo" placeholder="Photo URL" required className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
                         </div>
                         <div className="relative">
                             <div className="flex justify-between mb-2">
                                 <label htmlFor="password" className="text-sm">Password</label>
                                 <a rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-gray-600">Forgot password?</a>
                             </div>
-                            <input type={showPassword ? 'password' : 'text'} name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
+                            <input type={showPassword ? 'password' : 'text'} name="password" id="password" placeholder="password" required className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
 
                             <div onClick={() => setShowPassword(!showPassword)} className="absolute top-1/2 right-2"> {showPassword ? <FaRegEyeSlash></FaRegEyeSlash> : <FaRegEye></FaRegEye>}
                             </div>
