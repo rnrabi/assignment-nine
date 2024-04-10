@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const Card = ({residential}) => {
     // console.log(residential)
     const {id , image , title , status , area , location , price ,segment_name} =residential;
     return (
-        <div>
+        <div data-aos="zoom-in" data-aos-duration="1000">
             <div className="card w-96 bg-base-100 shadow-xl">
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body">
